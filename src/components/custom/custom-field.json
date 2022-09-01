@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_custom_custom_fields",
+  "info": {
+    "displayName": "custom_field",
+    "icon": "bolt"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "required": {
+      "type": "boolean"
+    },
+    "options": {
+      "type": "enumeration",
+      "enum": [
+        "gold",
+        "silver"
+      ]
+    }
+  }
+}
