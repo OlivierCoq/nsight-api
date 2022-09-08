@@ -1,24 +1,19 @@
-// path: ./my-project/config/database.js
-
+const parse = require("pg-connection-string").parse;
+const config = parse(process.env.AWS_DATABASE_URL);
 module.exports = ({ env }) => ({
   connection: {
     client: "postgres",
     connection: {
-      host: env("DATABASE_HOST", "127.0.0.1"),
-      port: env.int("DATABASE_PORT", 5432),
-      database: env("DATABASE_NAME"),
-      user: env("DATABASE_USERNAME"),
-      password: env("DATABASE_PASSWORD"),
+      host: config.host,
+      port: config.port,
+      database: config.database,
+      user: config.user,
+      password: config.password,
+      ssl: {
+        rejectUnauthorized: false,
+      },
     },
-    options: {
-      pool:{
-          min: 0,
-          max: 10,
-          idleTimeoutMillis: 30000,
-          createTimeoutMillis: 30000,
-          acquireTimeoutMillis: 30000
-      }
-  },
-  useNullAsDefault: true,
+    debug: false,
+    acquireConnectionTimeout: 1200000,
   },
 });
