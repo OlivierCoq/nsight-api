@@ -11,7 +11,6 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-graphql": "4.3.6",
     "@strapi/plugin-i18n": "4.3.6",
     "@strapi/plugin-users-permissions": "4.3.6",
     "@strapi/provider-upload-aws-s3": "^4.3.6",
@@ -19,13 +18,14 @@
     "@strapi/strapi": "4.3.6",
     "better-sqlite3": "7.4.6",
     "pg": "^8.8.0",
-    "pg-connection-string": "^2.5.0"
+    "pg-connection-string": "^2.5.0",
+    "pm2": "^5.2.0"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "4fe8c3a2-1b03-479b-90d1-6733c557528c"
+    "uuid": "f4f0f423-5850-4468-9425-8d92a021a428"
   },
   "engines": {
     "node": ">=14.19.1 <=16.x.x",
