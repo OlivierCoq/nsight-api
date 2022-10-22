@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nsight_ids",
+  "info": {
+    "singularName": "nsight-id",
+    "pluralName": "nsight-ids",
+    "displayName": "nsight_id",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nsight_id": {
+      "type": "uid",
+      "required": true
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
