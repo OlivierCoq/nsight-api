@@ -15,6 +15,16 @@ module.exports = ({ env }) => ({
       },
     },
     email: {
-      provider: 'console',
-    },
+      config: {
+        provider: 'sendgrid', 
+        providerOptions: {
+          apiKey: env('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'),
+        },
+        settings: {
+          defaultFrom: 'info@nsight.online',
+          defaultReplyTo: 'tech.nsight2022@gmail.com',
+          testAddress: 'tech.nsight2022@gmail.com',
+        },
+      }, 
+    }
 })
