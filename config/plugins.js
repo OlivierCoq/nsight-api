@@ -18,7 +18,7 @@ module.exports = ({ env }) => ({
       config: {
         provider: 'sendgrid', 
         providerOptions: {
-          apiKey: env('nsightvip_email_api_key'), 
+          apiKey: env('nsightvip_email_api_key'),
         },
         settings: {
           defaultFrom: 'info@nsight.online',
