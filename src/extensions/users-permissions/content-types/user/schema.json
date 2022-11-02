@@ -67,6 +67,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::nsight-id.nsight-id"
+    },
+    "preferences": {
+      "displayName": "preferences",
+      "type": "component",
+      "repeatable": false,
+      "component": "custom.preferences"
     }
   }
 }

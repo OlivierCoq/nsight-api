@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_custom_preferences",
+  "info": {
+    "displayName": "preferences",
+    "icon": "wrench",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "dark_mode": {
+      "type": "boolean"
+    }
+  }
+}
