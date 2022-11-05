@@ -48,6 +48,12 @@
       "type": "component",
       "repeatable": true,
       "component": "custom.custom-field"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "products"
     }
   }
 }
