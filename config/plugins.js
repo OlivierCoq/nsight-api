@@ -21,7 +21,7 @@ module.exports = ({ env }) => ({
           apiKey: env('nsight_api_email_key'),
         },
         settings: {
-          defaultFrom: 'info@nsight.online',
+          defaultFrom: 'info@nsightapi.vip',
           defaultReplyTo: 'tech.nsight2022@gmail.com',
           testAddress: 'tech.nsight2022@gmail.com',
         },
