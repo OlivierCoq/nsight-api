@@ -20,6 +20,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user"
+    },
+    "authentic": {
+      "type": "boolean",
+      "default": true,
+      "required": true
     }
   }
 }
