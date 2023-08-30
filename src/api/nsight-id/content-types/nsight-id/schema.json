@@ -12,10 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "nsight_id": {
-      "type": "uid",
-      "required": true
-    },
     "users_permissions_user": {
       "type": "relation",
       "relation": "oneToOne",
@@ -24,6 +20,11 @@
     "authentic": {
       "type": "boolean",
       "required": true
+    },
+    "nsight_id": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }
