@@ -89,6 +89,12 @@
     "first_name": {
       "type": "string",
       "required": true
+    },
+    "favorites": {
+      "type": "json"
+    },
+    "cart": {
+      "type": "string"
     }
   }
 }
