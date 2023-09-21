@@ -95,6 +95,15 @@
     },
     "cart": {
       "type": "string"
+    },
+    "addresses": {
+      "type": "json"
+    },
+    "selected_address": {
+      "type": "json"
+    },
+    "last_name": {
+      "type": "string"
     }
   }
 }
