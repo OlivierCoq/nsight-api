@@ -104,6 +104,9 @@
     },
     "last_name": {
       "type": "string"
+    },
+    "selected_payment_method": {
+      "type": "json"
     }
   }
 }
