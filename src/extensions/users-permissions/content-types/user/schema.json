@@ -107,6 +107,9 @@
     },
     "selected_payment_method": {
       "type": "json"
+    },
+    "payment_methods": {
+      "type": "json"
     }
   }
 }
