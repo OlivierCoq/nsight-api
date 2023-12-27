@@ -113,6 +113,9 @@
     },
     "chec_customer_id": {
       "type": "string"
+    },
+    "medusa_id": {
+      "type": "string"
     }
   }
 }
