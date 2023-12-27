@@ -17,7 +17,7 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      origin: [process.env.LOCAL_URL, process.env.LOCAL_FRONTEND_URL, 'https://nsight.vip', 'https://nsightapi.vip', 'https://nsight-frontend-nkwvo.ondigitalocean.app'],
+      origin: [process.env.LOCAL_URL, process.env.LOCAL_FRONTEND_URL, 'https://nsight.vip', 'https://nsightapi.vip', 'https://nsight-frontend-nkwvo.ondigitalocean.app', 'https://nsight.life'],
       headers: ['Content-Type', 'Authorization', 'X-Authorization', 'Origin', 'Accept', 'Access-Control-Allow-Origin'],
     }
   },
