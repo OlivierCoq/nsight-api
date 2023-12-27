@@ -1,6 +1,6 @@
 module.exports = [
-  { name: 'strapi::errors'},
-  { 
+  { name: 'strapi::errors' },
+  {
     name: 'strapi::security',
     config: {
       contentSecurityPolicy: {
@@ -14,12 +14,18 @@ module.exports = [
       },
     }
   },
-  { name: 'strapi::cors'},
-  { name: 'strapi::poweredBy'},
-  { name: 'strapi::logger'},
-  { name: 'strapi::query'},
-  { name: 'strapi::body'},
-  { name: 'strapi::session'},
-  { name: 'strapi::favicon'},
-  { name: 'strapi::public'},
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: [process.env.LOCAL_URL, process.env.LOCAL_FRONTEND_URL, 'https://nsight.vip', 'https://nsightapi.vip', 'https://nsight-frontend-nkwvo.ondigitalocean.app'],
+      headers: ['Content-Type', 'Authorization', 'X-Authorization', 'Origin', 'Accept', 'Access-Control-Allow-Origin'],
+    }
+  },
+  { name: 'strapi::poweredBy' },
+  { name: 'strapi::logger' },
+  { name: 'strapi::query' },
+  { name: 'strapi::body' },
+  { name: 'strapi::session' },
+  { name: 'strapi::favicon' },
+  { name: 'strapi::public' },
 ];

@@ -110,6 +110,9 @@
     },
     "payment_methods": {
       "type": "json"
+    },
+    "chec_customer_id": {
+      "type": "string"
     }
   }
 }
