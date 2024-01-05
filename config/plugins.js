@@ -25,5 +25,17 @@ module.exports = ({ env }) => ({
         delete: {}
       }
     }
-  }
+  },
+  'email': {
+    config: {
+      provider: 'sendgrid',
+      providerOptions: {
+        apiKey: env('nsight_api_email_key'),
+      },
+      settings: {
+        defaultFrom: 'info@nsightapi.vip',
+        defaultReplyTo: 'info@nsightapi.vip',
+      },
+    },
+  },
 })
