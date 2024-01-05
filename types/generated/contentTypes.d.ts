@@ -838,6 +838,12 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     selected_payment_method: Attribute.JSON;
     payment_methods: Attribute.JSON;
     medusa_id: Attribute.String;
+    preferences: Attribute.Component<'user.preferences', true>;
+    nsight_id: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToOne',
+      'api::nsight-id.nsight-id'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

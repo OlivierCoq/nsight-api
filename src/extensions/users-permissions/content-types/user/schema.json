@@ -106,6 +106,16 @@
     },
     "medusa_id": {
       "type": "string"
+    },
+    "preferences": {
+      "type": "component",
+      "repeatable": true,
+      "component": "user.preferences"
+    },
+    "nsight_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::nsight-id.nsight-id"
     }
   }
 }
