@@ -4,27 +4,23 @@
   "info": {
     "singularName": "nsight-id",
     "pluralName": "nsight-ids",
-    "displayName": "nsight_id",
-    "description": ""
+    "displayName": "Nsight_id"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "users_permissions_user": {
+    "user": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
+      "target": "admin::user"
     },
     "authentic": {
-      "type": "boolean",
-      "required": true
+      "type": "boolean"
     },
     "nsight_id": {
-      "type": "string",
-      "required": true,
-      "unique": true
+      "type": "string"
     }
   }
 }

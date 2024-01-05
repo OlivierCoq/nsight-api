@@ -9,8 +9,7 @@
     "displayName": "User"
   },
   "options": {
-    "draftAndPublish": false,
-    "timestamps": true
+    "draftAndPublish": false
   },
   "attributes": {
     "username": {
@@ -34,17 +33,20 @@
       "type": "password",
       "minLength": 6,
       "configurable": false,
-      "private": true
+      "private": true,
+      "searchable": false
     },
     "resetPasswordToken": {
       "type": "string",
       "configurable": false,
-      "private": true
+      "private": true,
+      "searchable": false
     },
     "confirmationToken": {
       "type": "string",
       "configurable": false,
-      "private": true
+      "private": true,
+      "searchable": false
     },
     "confirmed": {
       "type": "boolean",
@@ -63,16 +65,8 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "preferences": {
-      "displayName": "preferences",
-      "type": "component",
-      "repeatable": false,
-      "component": "custom.preferences"
-    },
-    "nsight_id": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::nsight-id.nsight-id"
+    "dark_mode": {
+      "type": "boolean"
     },
     "users_permissions_users": {
       "type": "relation",
@@ -87,8 +81,10 @@
       "inversedBy": "users_permissions_users"
     },
     "first_name": {
-      "type": "string",
-      "required": true
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
     },
     "favorites": {
       "type": "json"
@@ -99,20 +95,14 @@
     "addresses": {
       "type": "json"
     },
-    "selected_address": {
+    "selected_addresses": {
       "type": "json"
-    },
-    "last_name": {
-      "type": "string"
     },
     "selected_payment_method": {
       "type": "json"
     },
     "payment_methods": {
       "type": "json"
-    },
-    "chec_customer_id": {
-      "type": "string"
     },
     "medusa_id": {
       "type": "string"

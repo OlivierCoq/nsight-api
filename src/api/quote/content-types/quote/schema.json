@@ -12,13 +12,10 @@
   "pluginOptions": {},
   "attributes": {
     "quote_body": {
-      "type": "richtext",
-      "required": true
+      "type": "blocks"
     },
     "author": {
-      "type": "string",
-      "required": true,
-      "default": "unknown"
+      "type": "string"
     },
     "link": {
       "type": "string"
