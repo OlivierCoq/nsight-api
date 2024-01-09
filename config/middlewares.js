@@ -7,7 +7,7 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': ["'self", 'https:', 'http:'],
+          'connect-src': ["'self'", 'https:', 'http:'],
           'img-src': ["'self'", 'data:', 'blob:', 'dl.airtable.com', 'res.cloudinary.com'],
           'media-src': ["'self'", 'data:', 'blob:', 'dl.airtable.com', 'res.cloudinary.com'],
           upgradeInsecureRequests: null,
@@ -21,7 +21,7 @@ module.exports = [
     config: {
       enabled: true,
       headers: '*',
-      origin: ['http://localhost:1337', 'http://localhost:3000']
+      origin: ['http://localhost:1337', 'http://localhost:3000', 'https://nsightapi.vip', 'https://www.nsightapi.vip', 'https://nsight.vip'],
     }
   },
   { name: 'strapi::query' },
