@@ -819,16 +819,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.role'
     >;
     dark_mode: Attribute.Boolean;
-    users_permissions_users: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'manyToMany',
-      'plugin::users-permissions.user'
-    >;
-    users: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'manyToMany',
-      'plugin::users-permissions.user'
-    >;
     first_name: Attribute.String;
     last_name: Attribute.String;
     favorites: Attribute.JSON;
@@ -843,6 +833,16 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'oneToOne',
       'api::nsight-id.nsight-id'
+    >;
+    friends: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
+    users: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'manyToMany',
+      'plugin::users-permissions.user'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

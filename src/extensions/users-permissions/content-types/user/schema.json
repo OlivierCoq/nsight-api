@@ -68,18 +68,6 @@
     "dark_mode": {
       "type": "boolean"
     },
-    "users_permissions_users": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "users"
-    },
-    "users": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "users_permissions_users"
-    },
     "first_name": {
       "type": "string"
     },
@@ -116,6 +104,18 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::nsight-id.nsight-id"
+    },
+    "friends": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "users"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "friends"
     }
   }
 }
