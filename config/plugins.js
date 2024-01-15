@@ -38,5 +38,5 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  'strapi-plugin-medusajs': true
+  'strapi-plugin-medusajs': false
 })
