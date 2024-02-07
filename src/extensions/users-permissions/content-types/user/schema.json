@@ -116,6 +116,9 @@
       "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
       "inversedBy": "friends"
+    },
+    "medusa_password": {
+      "type": "string"
     }
   }
 }
