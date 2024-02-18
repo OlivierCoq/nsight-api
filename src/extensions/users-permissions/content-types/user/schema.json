@@ -119,6 +119,13 @@
     },
     "medusa_password": {
       "type": "string"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "square_id": {
+      "type": "string",
+      "required": false
     }
   }
 }
