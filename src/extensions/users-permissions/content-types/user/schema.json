@@ -126,6 +126,15 @@
     "square_id": {
       "type": "string",
       "required": false
+    },
+    "orders": {
+      "type": "json"
+    },
+    "returns": {
+      "type": "json"
+    },
+    "cancelled_orders": {
+      "type": "json"
     }
   }
 }

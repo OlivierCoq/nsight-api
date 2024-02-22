@@ -847,6 +847,9 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     medusa_password: Attribute.String;
     phone_number: Attribute.String;
     square_id: Attribute.String;
+    orders: Attribute.JSON;
+    returns: Attribute.JSON;
+    cancelled_orders: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
