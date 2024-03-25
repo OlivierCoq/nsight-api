@@ -852,6 +852,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     cancelled_orders: Attribute.JSON;
     profile_picture: Attribute.Media;
     pictures: Attribute.Media;
+    cart_obj: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
