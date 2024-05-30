@@ -160,6 +160,9 @@
     },
     "cart_obj": {
       "type": "json"
+    },
+    "reset_hash": {
+      "type": "string"
     }
   }
 }

@@ -853,6 +853,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     profile_picture: Attribute.Media;
     pictures: Attribute.Media;
     cart_obj: Attribute.JSON;
+    reset_hash: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
