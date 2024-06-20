@@ -163,6 +163,9 @@
     },
     "reset_hash": {
       "type": "string"
+    },
+    "chats": {
+      "type": "json"
     }
   }
 }

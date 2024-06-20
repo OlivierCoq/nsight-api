@@ -24,8 +24,18 @@ module.exports = [
       origin: ['http://localhost:1337', 'http://localhost:3000', 'https://nsightapi.vip', 'https://www.nsightapi.vip', 'https://nsight.vip', 'https://nsight.life', 'https://www.nsight.life'],
     }
   },
-  { name: 'strapi::query' },
-  { name: 'strapi::body' },
+  { name: 'strapi::query'},
+  { 
+    name: 'strapi::body',
+    config: {
+      jsonLimit: "100mb",
+      formLimit: "100mb",
+      textLimit: "100mb",
+      formidable: {
+        maxFileSize: 200 * 1024 * 1024,
+      },
+    }
+  },
   { name: 'strapi::session' },
   { name: 'strapi::favicon' },
   { name: 'strapi::public' },

@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_chat_chat_messages",
+  "info": {
+    "displayName": "chat_message",
+    "icon": "discuss",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "sender": {
+      "type": "json",
+      "required": true
+    },
+    "receiver": {
+      "type": "json",
+      "required": true
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "seen": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

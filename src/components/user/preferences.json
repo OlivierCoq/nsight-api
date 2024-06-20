@@ -2,12 +2,22 @@
   "collectionName": "components_user_preferences",
   "info": {
     "displayName": "preferences",
-    "icon": "user"
+    "icon": "user",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "dark_mode": {
       "type": "boolean"
+    },
+    "default_dashboard_tab": {
+      "type": "enumeration",
+      "enum": [
+        "my_friends",
+        "my_profile",
+        "current"
+      ],
+      "default": "my_friends"
     }
   }
 }
