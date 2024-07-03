@@ -21,7 +21,7 @@ module.exports = [
     config: {
       enabled: true,
       headers: '*',
-      origin: ['http://localhost:1337', 'http://localhost:3000', 'https://nsightapi.vip', 'https://www.nsightapi.vip', 'https://nsight.vip', 'https://nsight.life', 'https://www.nsight.life'],
+      origin: ['http://localhost:1337', 'http://localhost:3000', 'http://localhost:3001', 'https://nsightapi.vip', 'https://www.nsightapi.vip', 'https://nsight.vip', 'https://nsight.life', 'https://www.nsight.life'],
     }
   },
   { name: 'strapi::query'},

@@ -362,53 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiChatConversationChatConversation
-  extends Schema.CollectionType {
-  collectionName: 'chat_conversations';
-  info: {
-    singularName: 'chat-conversation';
-    pluralName: 'chat-conversations';
-    displayName: 'Chat Conversation';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    messages: Attribute.Component<'chat.chat-message', true>;
-    users_permissions_users: Attribute.Relation<
-      'api::chat-conversation.chat-conversation',
-      'oneToMany',
-      'plugin::users-permissions.user'
-    >;
-    sender: Attribute.Relation<
-      'api::chat-conversation.chat-conversation',
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
-    receiver: Attribute.Relation<
-      'api::chat-conversation.chat-conversation',
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::chat-conversation.chat-conversation',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::chat-conversation.chat-conversation',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiNsightIdNsightId extends Schema.CollectionType {
   collectionName: 'nsight_ids';
   info: {
@@ -929,7 +882,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::chat-conversation.chat-conversation': ApiChatConversationChatConversation;
       'api::nsight-id.nsight-id': ApiNsightIdNsightId;
       'api::quote.quote': ApiQuoteQuote;
       'plugin::upload.file': PluginUploadFile;
