@@ -362,6 +362,76 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiConversationConversation extends Schema.CollectionType {
+  collectionName: 'conversations';
+  info: {
+    singularName: 'conversation';
+    pluralName: 'conversations';
+    displayName: 'Conversation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    participants: Attribute.Relation<
+      'api::conversation.conversation',
+      'oneToMany',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::conversation.conversation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::conversation.conversation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMessageMessage extends Schema.CollectionType {
+  collectionName: 'messages';
+  info: {
+    singularName: 'message';
+    pluralName: 'messages';
+    displayName: 'Message';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Attribute.RichText;
+    sender: Attribute.Relation<
+      'api::message.message',
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
+    attachments: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::message.message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::message.message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNsightIdNsightId extends Schema.CollectionType {
   collectionName: 'nsight_ids';
   info: {
@@ -855,6 +925,16 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     cart_obj: Attribute.JSON;
     reset_hash: Attribute.String;
     chats: Attribute.JSON;
+    conversation: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'manyToOne',
+      'api::conversation.conversation'
+    >;
+    messages: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'manyToMany',
+      'api::message.message'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -882,6 +962,8 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::conversation.conversation': ApiConversationConversation;
+      'api::message.message': ApiMessageMessage;
       'api::nsight-id.nsight-id': ApiNsightIdNsightId;
       'api::quote.quote': ApiQuoteQuote;
       'plugin::upload.file': PluginUploadFile;

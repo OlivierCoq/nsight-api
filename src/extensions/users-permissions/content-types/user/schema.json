@@ -166,6 +166,18 @@
     },
     "chats": {
       "type": "json"
+    },
+    "conversation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::conversation.conversation",
+      "inversedBy": "participants"
+    },
+    "messages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::message.message",
+      "mappedBy": "sender"
     }
   }
 }
