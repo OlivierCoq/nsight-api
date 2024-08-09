@@ -362,144 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiConversationConversation extends Schema.CollectionType {
-  collectionName: 'conversations';
-  info: {
-    singularName: 'conversation';
-    pluralName: 'conversations';
-    displayName: 'Conversation';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    participants: Attribute.Relation<
-      'api::conversation.conversation',
-      'oneToMany',
-      'plugin::users-permissions.user'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::conversation.conversation',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::conversation.conversation',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiMessageMessage extends Schema.CollectionType {
-  collectionName: 'messages';
-  info: {
-    singularName: 'message';
-    pluralName: 'messages';
-    displayName: 'Message';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    content: Attribute.RichText;
-    sender: Attribute.Relation<
-      'api::message.message',
-      'manyToMany',
-      'plugin::users-permissions.user'
-    >;
-    attachments: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::message.message',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::message.message',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiNsightIdNsightId extends Schema.CollectionType {
-  collectionName: 'nsight_ids';
-  info: {
-    singularName: 'nsight-id';
-    pluralName: 'nsight-ids';
-    displayName: 'Nsight_id';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    user: Attribute.Relation<
-      'api::nsight-id.nsight-id',
-      'oneToOne',
-      'admin::user'
-    >;
-    authentic: Attribute.Boolean;
-    nsight_id: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::nsight-id.nsight-id',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::nsight-id.nsight-id',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiQuoteQuote extends Schema.CollectionType {
-  collectionName: 'quotes';
-  info: {
-    singularName: 'quote';
-    pluralName: 'quotes';
-    displayName: 'Quote';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    quote_body: Attribute.Blocks;
-    author: Attribute.String;
-    link: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::quote.quote',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::quote.quote',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -952,6 +814,144 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiConversationConversation extends Schema.CollectionType {
+  collectionName: 'conversations';
+  info: {
+    singularName: 'conversation';
+    pluralName: 'conversations';
+    displayName: 'Conversation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    participants: Attribute.Relation<
+      'api::conversation.conversation',
+      'oneToMany',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::conversation.conversation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::conversation.conversation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMessageMessage extends Schema.CollectionType {
+  collectionName: 'messages';
+  info: {
+    singularName: 'message';
+    pluralName: 'messages';
+    displayName: 'Message';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Attribute.RichText;
+    sender: Attribute.Relation<
+      'api::message.message',
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
+    attachments: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::message.message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::message.message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNsightIdNsightId extends Schema.CollectionType {
+  collectionName: 'nsight_ids';
+  info: {
+    singularName: 'nsight-id';
+    pluralName: 'nsight-ids';
+    displayName: 'Nsight_id';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    user: Attribute.Relation<
+      'api::nsight-id.nsight-id',
+      'oneToOne',
+      'admin::user'
+    >;
+    authentic: Attribute.Boolean;
+    nsight_id: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::nsight-id.nsight-id',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::nsight-id.nsight-id',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiQuoteQuote extends Schema.CollectionType {
+  collectionName: 'quotes';
+  info: {
+    singularName: 'quote';
+    pluralName: 'quotes';
+    displayName: 'Quote';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    quote_body: Attribute.Blocks;
+    author: Attribute.String;
+    link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::quote.quote',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::quote.quote',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -962,10 +962,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::conversation.conversation': ApiConversationConversation;
-      'api::message.message': ApiMessageMessage;
-      'api::nsight-id.nsight-id': ApiNsightIdNsightId;
-      'api::quote.quote': ApiQuoteQuote;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -974,6 +970,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::conversation.conversation': ApiConversationConversation;
+      'api::message.message': ApiMessageMessage;
+      'api::nsight-id.nsight-id': ApiNsightIdNsightId;
+      'api::quote.quote': ApiQuoteQuote;
     }
   }
 }
