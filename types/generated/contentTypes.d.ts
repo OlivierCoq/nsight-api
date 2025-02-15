@@ -986,6 +986,11 @@ export interface ApiPostPost extends Schema.CollectionType {
     tags: Attribute.Component<'profiles.tag', true>;
     reactions: Attribute.Component<'posts.reactions'> & Attribute.Required;
     external_links: Attribute.Component<'general.link', true>;
+    comments: Attribute.Relation<
+      'api::post.post',
+      'oneToOne',
+      'api::comment-thread.comment-thread'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

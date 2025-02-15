@@ -61,6 +61,11 @@
       "type": "component",
       "repeatable": true,
       "component": "general.link"
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::comment-thread.comment-thread"
     }
   }
 }
