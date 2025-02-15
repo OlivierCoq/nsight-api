@@ -814,6 +814,42 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiCommentThreadCommentThread extends Schema.CollectionType {
+  collectionName: 'comment_threads';
+  info: {
+    singularName: 'comment-thread';
+    pluralName: 'comment-threads';
+    displayName: 'Comment Thread';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    post: Attribute.Relation<
+      'api::comment-thread.comment-thread',
+      'oneToOne',
+      'api::post.post'
+    >;
+    comments: Attribute.Component<'comment-threads.comment', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::comment-thread.comment-thread',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::comment-thread.comment-thread',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiConversationConversation extends Schema.CollectionType {
   collectionName: 'conversations';
   info: {
@@ -1056,6 +1092,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::comment-thread.comment-thread': ApiCommentThreadCommentThread;
       'api::conversation.conversation': ApiConversationConversation;
       'api::message.message': ApiMessageMessage;
       'api::nsight-id.nsight-id': ApiNsightIdNsightId;

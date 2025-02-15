@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comment_threads",
+  "info": {
+    "singularName": "comment-thread",
+    "pluralName": "comment-threads",
+    "displayName": "Comment Thread",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "post": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::post.post"
+    },
+    "comments": {
+      "type": "component",
+      "repeatable": true,
+      "component": "comment-threads.comment"
+    }
+  }
+}

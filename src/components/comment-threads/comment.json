@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_comment_threads_comments",
+  "info": {
+    "displayName": "comment",
+    "icon": "discuss",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "body": {
+      "type": "richtext"
+    },
+    "commenter": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "visible": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "replies": {
+      "type": "component",
+      "repeatable": true,
+      "component": "comment-threads.reply"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_comment_threads_replies",
+  "info": {
+    "displayName": "reply",
+    "icon": "write"
+  },
+  "options": {},
+  "attributes": {
+    "body": {
+      "type": "richtext"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "target": {
+      "type": "string"
+    }
+  }
+}
