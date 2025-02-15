@@ -4,7 +4,8 @@
   "info": {
     "singularName": "conversation",
     "pluralName": "conversations",
-    "displayName": "Conversation"
+    "displayName": "Conversation",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

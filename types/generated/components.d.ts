@@ -16,6 +16,42 @@ export interface ChatChatMessage extends Schema.Component {
   };
 }
 
+export interface GeneralLink extends Schema.Component {
+  collectionName: 'components_general_links';
+  info: {
+    displayName: 'link';
+    icon: 'link';
+  };
+  attributes: {
+    link_text: Attribute.RichText;
+    href: Attribute.RichText;
+  };
+}
+
+export interface PostsReactions extends Schema.Component {
+  collectionName: 'components_posts_reactions';
+  info: {
+    displayName: 'reactions';
+    icon: 'discuss';
+    description: '';
+  };
+  attributes: {
+    upvotes: Attribute.Integer & Attribute.DefaultTo<0>;
+    downvotes: Attribute.Integer & Attribute.DefaultTo<0>;
+  };
+}
+
+export interface ProfilesTag extends Schema.Component {
+  collectionName: 'components_profiles_tags';
+  info: {
+    displayName: 'tag';
+    icon: 'layout';
+  };
+  attributes: {
+    tag_name: Attribute.String;
+  };
+}
+
 export interface UserPreferences extends Schema.Component {
   collectionName: 'components_user_preferences';
   info: {
@@ -36,6 +72,9 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'chat.chat-message': ChatChatMessage;
+      'general.link': GeneralLink;
+      'posts.reactions': PostsReactions;
+      'profiles.tag': ProfilesTag;
       'user.preferences': UserPreferences;
     }
   }

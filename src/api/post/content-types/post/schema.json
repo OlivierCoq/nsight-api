@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "pics": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "visible": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "profile": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::profile.profile",
+      "inversedBy": "posts"
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "profiles.tag"
+    },
+    "reactions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "posts.reactions",
+      "required": true
+    },
+    "external_links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.link"
+    }
+  }
+}

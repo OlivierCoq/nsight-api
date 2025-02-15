@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_general_links",
+  "info": {
+    "displayName": "link",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "link_text": {
+      "type": "richtext"
+    },
+    "href": {
+      "type": "richtext"
+    }
+  }
+}

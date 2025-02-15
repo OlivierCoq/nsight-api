@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_posts_reactions",
+  "info": {
+    "displayName": "reactions",
+    "icon": "discuss",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "upvotes": {
+      "type": "integer",
+      "default": 0
+    },
+    "downvotes": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

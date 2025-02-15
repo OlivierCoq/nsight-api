@@ -820,6 +820,7 @@ export interface ApiConversationConversation extends Schema.CollectionType {
     singularName: 'conversation';
     pluralName: 'conversations';
     displayName: 'Conversation';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -920,6 +921,91 @@ export interface ApiNsightIdNsightId extends Schema.CollectionType {
   };
 }
 
+export interface ApiPostPost extends Schema.CollectionType {
+  collectionName: 'posts';
+  info: {
+    singularName: 'post';
+    pluralName: 'posts';
+    displayName: 'post';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    users_permissions_user: Attribute.Relation<
+      'api::post.post',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    title: Attribute.String & Attribute.Required;
+    body: Attribute.RichText;
+    pics: Attribute.Media;
+    visible: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+    profile: Attribute.Relation<
+      'api::post.post',
+      'manyToOne',
+      'api::profile.profile'
+    >;
+    tags: Attribute.Component<'profiles.tag', true>;
+    reactions: Attribute.Component<'posts.reactions'> & Attribute.Required;
+    external_links: Attribute.Component<'general.link', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProfileProfile extends Schema.CollectionType {
+  collectionName: 'profiles';
+  info: {
+    singularName: 'profile';
+    pluralName: 'profiles';
+    displayName: 'profile';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    users_permissions_user: Attribute.Relation<
+      'api::profile.profile',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    nsight_id: Attribute.Relation<
+      'api::profile.profile',
+      'oneToOne',
+      'api::nsight-id.nsight-id'
+    >;
+    intro: Attribute.RichText;
+    posts: Attribute.Relation<
+      'api::profile.profile',
+      'oneToMany',
+      'api::post.post'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::profile.profile',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::profile.profile',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiQuoteQuote extends Schema.CollectionType {
   collectionName: 'quotes';
   info: {
@@ -973,6 +1059,8 @@ declare module '@strapi/types' {
       'api::conversation.conversation': ApiConversationConversation;
       'api::message.message': ApiMessageMessage;
       'api::nsight-id.nsight-id': ApiNsightIdNsightId;
+      'api::post.post': ApiPostPost;
+      'api::profile.profile': ApiProfileProfile;
       'api::quote.quote': ApiQuoteQuote;
     }
   }
