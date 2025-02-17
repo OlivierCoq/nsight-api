@@ -66,6 +66,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::comment-thread.comment-thread"
+    },
+    "images": {
+      "type": "json"
     }
   }
 }

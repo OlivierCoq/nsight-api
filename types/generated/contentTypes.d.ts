@@ -991,6 +991,7 @@ export interface ApiPostPost extends Schema.CollectionType {
       'oneToOne',
       'api::comment-thread.comment-thread'
     >;
+    images: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
