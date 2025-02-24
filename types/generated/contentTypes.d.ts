@@ -989,6 +989,7 @@ export interface ApiPicturePostPicturePost extends Schema.CollectionType {
       'oneToOne',
       'api::comment-thread.comment-thread'
     >;
+    reactions: Attribute.Component<'posts.reactions'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

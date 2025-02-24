@@ -35,6 +35,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::comment-thread.comment-thread"
+    },
+    "reactions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "posts.reactions"
     }
   }
 }
