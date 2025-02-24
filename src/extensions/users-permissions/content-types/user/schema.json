@@ -147,17 +147,6 @@
         "audios"
       ]
     },
-    "pictures": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "cart_obj": {
       "type": "json"
     },
@@ -178,6 +167,9 @@
       "relation": "manyToMany",
       "target": "api::message.message",
       "mappedBy": "sender"
+    },
+    "pictures": {
+      "type": "json"
     }
   }
 }

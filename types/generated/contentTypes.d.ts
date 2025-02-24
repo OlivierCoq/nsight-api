@@ -783,7 +783,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     returns: Attribute.JSON;
     cancelled_orders: Attribute.JSON;
     profile_picture: Attribute.Media;
-    pictures: Attribute.Media;
     cart_obj: Attribute.JSON;
     reset_hash: Attribute.String;
     chats: Attribute.JSON;
@@ -797,6 +796,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToMany',
       'api::message.message'
     >;
+    pictures: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -832,6 +832,11 @@ export interface ApiCommentThreadCommentThread extends Schema.CollectionType {
       'api::post.post'
     >;
     comments: Attribute.Component<'comment-threads.comment', true>;
+    picture_post: Attribute.Relation<
+      'api::comment-thread.comment-thread',
+      'oneToOne',
+      'api::picture-post.picture-post'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -950,6 +955,50 @@ export interface ApiNsightIdNsightId extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::nsight-id.nsight-id',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPicturePostPicturePost extends Schema.CollectionType {
+  collectionName: 'picture_posts';
+  info: {
+    singularName: 'picture-post';
+    pluralName: 'picture-posts';
+    displayName: 'Picture Post';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    data: Attribute.JSON;
+    caption: Attribute.RichText;
+    users_permissions_user: Attribute.Relation<
+      'api::picture-post.picture-post',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    visible: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+    comments: Attribute.Relation<
+      'api::picture-post.picture-post',
+      'oneToOne',
+      'api::comment-thread.comment-thread'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::picture-post.picture-post',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::picture-post.picture-post',
       'oneToOne',
       'admin::user'
     > &
@@ -1102,6 +1151,7 @@ declare module '@strapi/types' {
       'api::conversation.conversation': ApiConversationConversation;
       'api::message.message': ApiMessageMessage;
       'api::nsight-id.nsight-id': ApiNsightIdNsightId;
+      'api::picture-post.picture-post': ApiPicturePostPicturePost;
       'api::post.post': ApiPostPost;
       'api::profile.profile': ApiProfileProfile;
       'api::quote.quote': ApiQuoteQuote;

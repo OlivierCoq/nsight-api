@@ -21,6 +21,11 @@
       "type": "component",
       "repeatable": true,
       "component": "comment-threads.comment"
+    },
+    "picture_post": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::picture-post.picture-post"
     }
   }
 }
