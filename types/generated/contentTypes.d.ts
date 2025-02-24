@@ -797,6 +797,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'api::message.message'
     >;
     pictures: Attribute.JSON;
+    pending_friends: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
