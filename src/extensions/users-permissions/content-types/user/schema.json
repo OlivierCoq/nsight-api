@@ -105,18 +105,6 @@
       "relation": "oneToOne",
       "target": "api::nsight-id.nsight-id"
     },
-    "friends": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "users"
-    },
-    "users": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "friends"
-    },
     "medusa_password": {
       "type": "string"
     },
@@ -173,6 +161,15 @@
     },
     "pending_friends": {
       "type": "json"
+    },
+    "progenitor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "friends": {
+      "type": "json",
+      "required": true
     }
   }
 }
