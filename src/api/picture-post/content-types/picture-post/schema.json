@@ -40,6 +40,10 @@
       "type": "component",
       "repeatable": false,
       "component": "posts.reactions"
+    },
+    "nsight_id": {
+      "type": "string",
+      "required": true
     }
   }
 }

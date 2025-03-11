@@ -69,6 +69,10 @@
     },
     "images": {
       "type": "json"
+    },
+    "nsight_id": {
+      "type": "string",
+      "required": true
     }
   }
 }

@@ -986,6 +986,7 @@ export interface ApiPicturePostPicturePost extends Schema.CollectionType {
       'api::comment-thread.comment-thread'
     >;
     reactions: Attribute.Component<'posts.reactions'>;
+    nsight_id: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1039,6 +1040,7 @@ export interface ApiPostPost extends Schema.CollectionType {
       'api::comment-thread.comment-thread'
     >;
     images: Attribute.JSON;
+    nsight_id: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
