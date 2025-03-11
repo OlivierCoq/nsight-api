@@ -4,21 +4,22 @@
   "info": {
     "singularName": "quote",
     "pluralName": "quotes",
-    "displayName": "Quote"
+    "displayName": "Quote",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "quote_body": {
-      "type": "blocks"
-    },
     "author": {
       "type": "string"
     },
     "link": {
       "type": "string"
+    },
+    "body": {
+      "type": "richtext"
     }
   }
 }

@@ -1101,14 +1101,15 @@ export interface ApiQuoteQuote extends Schema.CollectionType {
     singularName: 'quote';
     pluralName: 'quotes';
     displayName: 'Quote';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    quote_body: Attribute.Blocks;
     author: Attribute.String;
     link: Attribute.String;
+    body: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
