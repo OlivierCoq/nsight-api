@@ -772,7 +772,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     orders: Attribute.JSON;
     returns: Attribute.JSON;
     cancelled_orders: Attribute.JSON;
-    profile_picture: Attribute.Media;
     cart_obj: Attribute.JSON;
     reset_hash: Attribute.String;
     chats: Attribute.JSON;
@@ -794,6 +793,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user'
     >;
     friends: Attribute.JSON & Attribute.Required;
+    profile_picture: Attribute.JSON & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

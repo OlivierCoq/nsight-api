@@ -124,17 +124,6 @@
     "cancelled_orders": {
       "type": "json"
     },
-    "profile_picture": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "cart_obj": {
       "type": "json"
     },
@@ -168,6 +157,10 @@
       "target": "plugin::users-permissions.user"
     },
     "friends": {
+      "type": "json",
+      "required": true
+    },
+    "profile_picture": {
       "type": "json",
       "required": true
     }
