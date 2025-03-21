@@ -987,6 +987,7 @@ export interface ApiPicturePostPicturePost extends Schema.CollectionType {
     >;
     reactions: Attribute.Component<'posts.reactions'>;
     nsight_id: Attribute.String & Attribute.Required;
+    tags: Attribute.Component<'profiles.tag', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

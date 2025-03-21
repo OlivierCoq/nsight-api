@@ -44,6 +44,11 @@
     "nsight_id": {
       "type": "string",
       "required": true
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "profiles.tag"
     }
   }
 }
